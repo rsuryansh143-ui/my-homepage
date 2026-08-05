@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple and responsive home page built with HTML and CSS." />
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="#" class="nav-logo">MyWebsite</a>
+
+    <!-- Hamburger (mobile) -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to My Website</h1>
+      <p>A simple, clean, and responsive homepage built with HTML and CSS. Explore what we offer below.</p>
+      <a href="#features" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ===== Features Section ===== -->
+  <section class="features" id="features">
+    <h2>What We Offer</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3>Beautiful Design</h3>
+        <p>Clean and modern layouts that look great on every device.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>Fully responsive — works perfectly on phones, tablets, and desktops.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Fast & Simple</h3>
+        <p>Lightweight HTML and CSS with no heavy frameworks or libraries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Form Section ===== -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch</h2>
+    <p>Have a question? Fill out the form below and we'll get back to you.</p>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject">
+          <option value="">-- Select a topic --</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Support</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Toggle mobile nav menu
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('open');
+    }
+
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+      });
+    });
+
+    // Form submit handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      alert(`Thank you, ${name}! Your message has been sent.`);
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>

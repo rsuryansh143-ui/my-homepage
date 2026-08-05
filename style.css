@@ -1,0 +1,295 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #1a1a2e;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #e94560;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background-image: url('bg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin: 0 auto 28px;
+  color: #ddd;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #e94560;
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-left: 12px;
+}
+
+/* ===== Features Section ===== */
+.features {
+  padding: 70px 30px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1a1a2e;
+}
+
+.features-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px 24px;
+  width: 260px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.feature-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Contact Form Section ===== */
+.contact {
+  padding: 70px 30px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+
+.contact p {
+  color: #666;
+  margin-bottom: 36px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #1a1a2e;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.88rem;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #1a1a2e;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    padding: 20px 30px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .features-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
