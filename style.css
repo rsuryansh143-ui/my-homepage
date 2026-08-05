@@ -13,7 +13,7 @@ body {
 
 /* ===== Navigation ===== */
 nav {
-  background-color: #1a1a2e;
+  background-color: #1a0a00;
   padding: 14px 30px;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ nav {
 }
 
 .nav-logo {
-  color: #fff;
+  color: #ff7043;
   font-size: 1.4rem;
   font-weight: 700;
   text-decoration: none;
@@ -44,10 +44,10 @@ nav {
 }
 
 .nav-links li a:hover {
-  color: #e94560;
+  color: #ff7043;
 }
 
-/* Hamburger menu (hidden on desktop) */
+/* Hamburger (mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -64,10 +64,10 @@ nav {
 
 /* ===== Hero Section ===== */
 .hero {
-  background-image: url('bg.png');
+  background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&q=80');
   background-size: cover;
   background-position: center;
-  min-height: 90vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +78,7 @@ nav {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(20, 5, 0, 0.60);
 }
 
 .hero-content {
@@ -118,7 +118,7 @@ nav {
 }
 
 .btn-primary {
-  background-color: #e94560;
+  background-color: #ff7043;
   color: #fff;
 }
 
@@ -129,17 +129,17 @@ nav {
   margin-left: 12px;
 }
 
-/* ===== Features Section ===== */
+/* ===== Features / Info Cards ===== */
 .features {
   padding: 70px 30px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #fff8f5;
 }
 
 .features h2 {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #1a1a2e;
+  color: #1a0a00;
 }
 
 .features-grid {
@@ -154,7 +154,8 @@ nav {
   border-radius: 8px;
   padding: 30px 24px;
   width: 260px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(255, 112, 67, 0.12);
+  border-top: 3px solid #ff7043;
 }
 
 .feature-card .icon {
@@ -165,7 +166,7 @@ nav {
 .feature-card h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #1a1a2e;
+  color: #1a0a00;
 }
 
 .feature-card p {
@@ -173,17 +174,21 @@ nav {
   color: #666;
 }
 
-/* ===== Contact Form Section ===== */
+/* ===== Feedback / Contact Form ===== */
 .contact {
   padding: 70px 30px;
   text-align: center;
   background-color: #fff;
 }
 
+.contact-alt {
+  background-color: #fff8f5;
+}
+
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1a0a00;
 }
 
 .contact p {
@@ -192,7 +197,7 @@ nav {
 }
 
 .contact-form {
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
   text-align: left;
 }
@@ -209,7 +214,8 @@ nav {
   color: #444;
 }
 
-.form-group input,
+.form-group input[type="text"],
+.form-group input[type="email"],
 .form-group textarea,
 .form-group select {
   width: 100%;
@@ -225,7 +231,7 @@ nav {
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #e94560;
+  border-color: #ff7043;
 }
 
 .form-group textarea {
@@ -233,6 +239,63 @@ nav {
   min-height: 120px;
 }
 
+/* ===== Star Rating Buttons ===== */
+.star-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.star-btn {
+  padding: 8px 14px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.star-btn:hover {
+  border-color: #ff7043;
+  color: #ff7043;
+}
+
+.star-btn.active {
+  background-color: #ff7043;
+  border-color: #ff7043;
+  color: #fff;
+}
+
+.rating-label {
+  font-size: 0.88rem;
+  color: #ff7043;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+/* ===== Radio Group ===== */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #444;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: #ff7043;
+}
+
+/* ===== Submit Button ===== */
 .contact-form .btn {
   width: 100%;
   padding: 12px;
@@ -241,7 +304,7 @@ nav {
 
 /* ===== Footer ===== */
 footer {
-  background-color: #1a1a2e;
+  background-color: #1a0a00;
   color: #aaa;
   text-align: center;
   padding: 20px;
@@ -258,7 +321,7 @@ footer {
     display: none;
     flex-direction: column;
     gap: 12px;
-    background-color: #1a1a2e;
+    background-color: #1a0a00;
     position: absolute;
     top: 55px;
     left: 0;
@@ -291,5 +354,25 @@ footer {
   .feature-card {
     width: 100%;
     max-width: 340px;
+  }
+
+  .star-buttons {
+    gap: 8px;
+  }
+
+  .star-btn {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-alt .btn-outline {
+    margin-left: 0;
+    margin-top: 10px;
+    display: block;
   }
 }
