@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Share your feedback about your food delivery experience with QuickBite." />
-  <title>Feedback â€“ QuickBite Food Delivery</title>
+  <title>Feedback – QuickBite Food Delivery</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ===== Navigation ===== -->
   <nav>
-    <a href="#" class="nav-logo">ðŸ” QuickBite</a>
+    <a href="#" class="nav-logo">&#127828; QuickBite</a>
 
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span>
@@ -30,7 +30,7 @@
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>How Was Your Order? ðŸ•</h1>
+      <h1>How Was Your Order? &#127829;</h1>
       <p>Your feedback helps us deliver a better experience every time. It only takes a minute!</p>
       <a href="#feedback" class="btn btn-primary">Give Feedback</a>
       <a href="#contact" class="btn btn-outline">Contact Support</a>
@@ -42,17 +42,17 @@
     <h2>What Did You Think?</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="icon">ðŸ½ï¸</div>
+        <div class="icon">&#127869;</div>
         <h3>Food Quality</h3>
         <p>Was your food fresh, hot, and exactly as described?</p>
       </div>
       <div class="feature-card">
-        <div class="icon">ðŸš´</div>
+        <div class="icon">&#128692;</div>
         <h3>Delivery Speed</h3>
         <p>Did your order arrive on time or even early?</p>
       </div>
       <div class="feature-card">
-        <div class="icon">ðŸ“¦</div>
+        <div class="icon">&#128230;</div>
         <h3>Packaging</h3>
         <p>Was your food packed securely without any spills?</p>
       </div>
@@ -86,11 +86,11 @@
       <div class="form-group">
         <label>Overall Experience</label>
         <div class="star-buttons" id="star-buttons">
-          <button type="button" class="star-btn" onclick="setRating(1)">â­ 1</button>
-          <button type="button" class="star-btn" onclick="setRating(2)">â­ 2</button>
-          <button type="button" class="star-btn" onclick="setRating(3)">â­ 3</button>
-          <button type="button" class="star-btn" onclick="setRating(4)">â­ 4</button>
-          <button type="button" class="star-btn" onclick="setRating(5)">â­ 5</button>
+          <button type="button" class="star-btn" onclick="setRating(1)">&#11088; 1</button>
+          <button type="button" class="star-btn" onclick="setRating(2)">&#11088; 2</button>
+          <button type="button" class="star-btn" onclick="setRating(3)">&#11088; 3</button>
+          <button type="button" class="star-btn" onclick="setRating(4)">&#11088; 4</button>
+          <button type="button" class="star-btn" onclick="setRating(5)">&#11088; 5</button>
         </div>
         <input type="hidden" id="rating" name="rating" value="" />
         <p class="rating-label" id="rating-label">Select a rating</p>
@@ -140,13 +140,13 @@
   <section class="contact contact-alt" id="contact">
     <h2>Need Help?</h2>
     <p>Reach out to our support team and we'll resolve your issue quickly.</p>
-    <a href="mailto:support@quickbite.com" class="btn btn-primary">ðŸ“§ Email Support</a>
-    <a href="tel:+911800123456" class="btn btn-outline" style="margin-left:12px;">ðŸ“ž Call Us</a>
+    <a href="mailto:support@quickbite.com" class="btn btn-primary">&#128231; Email Support</a>
+    <a href="tel:+911800123456" class="btn btn-outline" style="margin-left:12px;">&#128222; Call Us</a>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2025 QuickBite Food Delivery. All rights reserved. | Made with â¤ï¸</p>
+    <p>&copy; 2025 QuickBite Food Delivery. All rights reserved. | Made with &#10084;&#65039;</p>
   </footer>
 
   <!-- ===== JavaScript ===== -->
@@ -163,7 +163,7 @@
     });
 
     // Star rating
-    const ratingLabels = ['', 'Poor ðŸ˜ž', 'Fair ðŸ˜', 'Good ðŸ™‚', 'Great ðŸ˜„', 'Excellent ðŸ¤©'];
+    const ratingLabels = ['', 'Poor &#128542;', 'Fair &#128528;', 'Good &#128578;', 'Great &#128516;', 'Excellent &#129321;'];
     let selectedRating = 0;
 
     function setRating(val) {
@@ -184,7 +184,7 @@
         return;
       }
       const name = document.getElementById('name').value;
-      alert(`Thank you, ${name}! ðŸŽ‰\nYour feedback has been submitted successfully.\nWe appreciate your time!`);
+      alert(`Thank you, ${name}! Your feedback has been submitted successfully. We appreciate your time!`);
       e.target.reset();
       document.querySelectorAll('.star-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById('rating-label').textContent = 'Select a rating';
