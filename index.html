@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A simple and responsive home page built with HTML and CSS." />
-  <title>My Home Page</title>
+  <meta name="description" content="Share your feedback about your food delivery experience with QuickBite." />
+  <title>Feedback â€“ QuickBite Food Delivery</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ===== Navigation ===== -->
   <nav>
-    <a href="#" class="nav-logo">MyWebsite</a>
+    <a href="#" class="nav-logo">ðŸ” QuickBite</a>
 
-    <!-- Hamburger (mobile) -->
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -22,7 +21,7 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#features">Features</a></li>
+      <li><a href="#feedback">Feedback</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -31,43 +30,50 @@
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Welcome to My Website</h1>
-      <p>A simple, clean, and responsive homepage built with HTML and CSS. Explore what we offer below.</p>
-      <a href="#features" class="btn btn-primary">Get Started</a>
-      <a href="#contact" class="btn btn-outline">Contact Us</a>
+      <h1>How Was Your Order? ðŸ•</h1>
+      <p>Your feedback helps us deliver a better experience every time. It only takes a minute!</p>
+      <a href="#feedback" class="btn btn-primary">Give Feedback</a>
+      <a href="#contact" class="btn btn-outline">Contact Support</a>
     </div>
   </section>
 
-  <!-- ===== Features Section ===== -->
-  <section class="features" id="features">
-    <h2>What We Offer</h2>
+  <!-- ===== Quick Rating Section ===== -->
+  <section class="features" id="rate">
+    <h2>What Did You Think?</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="icon">🎨</div>
-        <h3>Beautiful Design</h3>
-        <p>Clean and modern layouts that look great on every device.</p>
+        <div class="icon">ðŸ½ï¸</div>
+        <h3>Food Quality</h3>
+        <p>Was your food fresh, hot, and exactly as described?</p>
       </div>
       <div class="feature-card">
-        <div class="icon">📱</div>
-        <h3>Mobile Friendly</h3>
-        <p>Fully responsive — works perfectly on phones, tablets, and desktops.</p>
+        <div class="icon">ðŸš´</div>
+        <h3>Delivery Speed</h3>
+        <p>Did your order arrive on time or even early?</p>
       </div>
       <div class="feature-card">
-        <div class="icon">⚡</div>
-        <h3>Fast & Simple</h3>
-        <p>Lightweight HTML and CSS with no heavy frameworks or libraries.</p>
+        <div class="icon">ðŸ“¦</div>
+        <h3>Packaging</h3>
+        <p>Was your food packed securely without any spills?</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== Contact Form Section ===== -->
-  <section class="contact" id="contact">
-    <h2>Get In Touch</h2>
-    <p>Have a question? Fill out the form below and we'll get back to you.</p>
+  <!-- ===== Feedback Form ===== -->
+  <section class="contact" id="feedback">
+    <h2>Submit Your Feedback</h2>
+    <p>We'd love to hear about your experience with QuickBite!</p>
 
     <form class="contact-form" onsubmit="handleSubmit(event)">
+
+      <!-- Order Details -->
       <div class="form-group">
-        <label for="name">Full Name</label>
+        <label for="order-id">Order ID</label>
+        <input type="text" id="order-id" name="order_id" placeholder="e.g. QB-20250806-4521" required />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Your full name" required />
       </div>
 
@@ -76,51 +82,113 @@
         <input type="email" id="email" name="email" placeholder="you@example.com" required />
       </div>
 
+      <!-- Star Rating Buttons -->
       <div class="form-group">
-        <label for="subject">Subject</label>
-        <select id="subject" name="subject">
-          <option value="">-- Select a topic --</option>
-          <option value="general">General Inquiry</option>
-          <option value="support">Support</option>
-          <option value="feedback">Feedback</option>
+        <label>Overall Experience</label>
+        <div class="star-buttons" id="star-buttons">
+          <button type="button" class="star-btn" onclick="setRating(1)">â­ 1</button>
+          <button type="button" class="star-btn" onclick="setRating(2)">â­ 2</button>
+          <button type="button" class="star-btn" onclick="setRating(3)">â­ 3</button>
+          <button type="button" class="star-btn" onclick="setRating(4)">â­ 4</button>
+          <button type="button" class="star-btn" onclick="setRating(5)">â­ 5</button>
+        </div>
+        <input type="hidden" id="rating" name="rating" value="" />
+        <p class="rating-label" id="rating-label">Select a rating</p>
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label for="category">Feedback Category</label>
+        <select id="category" name="category" required>
+          <option value="">-- Select a category --</option>
+          <option value="food_quality">Food Quality</option>
+          <option value="delivery_speed">Delivery Speed</option>
+          <option value="packaging">Packaging</option>
+          <option value="customer_service">Customer Service</option>
+          <option value="app_experience">App Experience</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
+      <!-- Message -->
       <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        <label for="message">Your Comments</label>
+        <textarea id="message" name="message" placeholder="Tell us what you loved or what we can improve..." required></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Send Message</button>
+      <!-- Would Recommend -->
+      <div class="form-group">
+        <label>Would you recommend QuickBite to a friend?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="recommend" value="yes" required /> Yes, definitely!
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="recommend" value="maybe" /> Maybe
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="recommend" value="no" /> No
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submit-btn">Submit Feedback</button>
     </form>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact contact-alt" id="contact">
+    <h2>Need Help?</h2>
+    <p>Reach out to our support team and we'll resolve your issue quickly.</p>
+    <a href="mailto:support@quickbite.com" class="btn btn-primary">ðŸ“§ Email Support</a>
+    <a href="tel:+911800123456" class="btn btn-outline" style="margin-left:12px;">ðŸ“ž Call Us</a>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+    <p>&copy; 2025 QuickBite Food Delivery. All rights reserved. | Made with â¤ï¸</p>
   </footer>
 
   <!-- ===== JavaScript ===== -->
   <script>
-    // Toggle mobile nav menu
+    // Toggle mobile nav
     function toggleMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('open');
+      document.getElementById('nav-links').classList.toggle('open');
     }
 
-    // Close menu when a nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('nav-links').classList.remove('open');
       });
     });
 
-    // Form submit handler
+    // Star rating
+    const ratingLabels = ['', 'Poor ðŸ˜ž', 'Fair ðŸ˜', 'Good ðŸ™‚', 'Great ðŸ˜„', 'Excellent ðŸ¤©'];
+    let selectedRating = 0;
+
+    function setRating(val) {
+      selectedRating = val;
+      document.getElementById('rating').value = val;
+      document.getElementById('rating-label').textContent = ratingLabels[val];
+
+      document.querySelectorAll('.star-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i < val);
+      });
+    }
+
+    // Form submit
     function handleSubmit(e) {
       e.preventDefault();
+      if (!selectedRating) {
+        alert('Please select a star rating before submitting.');
+        return;
+      }
       const name = document.getElementById('name').value;
-      alert(`Thank you, ${name}! Your message has been sent.`);
+      alert(`Thank you, ${name}! ðŸŽ‰\nYour feedback has been submitted successfully.\nWe appreciate your time!`);
       e.target.reset();
+      document.querySelectorAll('.star-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('rating-label').textContent = 'Select a rating';
+      selectedRating = 0;
     }
   </script>
 
